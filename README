@@ -18,3 +18,11 @@ You can also specify the rate:
 bin/conjure -rate 100 examples/01-fixed-data.txt
 Will generate at 100 lines per second.
 See the Conjurer page for more options.
+
+Using kafka:
+bin/conjure -out kafka -zk localhost:2181 -rate 1 -topic sensei-cloudalytics examples/99-flat.json
+
+(need to install kafka jar to mvn)
+mvn install:install-file -Dfile=kafka-0.7.2.jar -DgroupId=kafka -DartifactId=core-kafka -Dversion=0.7.2 -Dpackaging=jar
+
+
